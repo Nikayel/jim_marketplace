@@ -13,3 +13,13 @@ class NewItemForm(forms.ModelForm):
             'price': forms.TextInput(attrs={'class': 'w-full py-4 px-6 rounded-xl border'}),
             'description': forms.Textarea(attrs={'class': INPUT_CLASSES}),
         }
+
+class EditItemForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ('catagory', 'name', 'description', 'price', 'image', 'is_sold')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'w-full py-4 px-6 rounded-xl border'}),
+            'price': forms.TextInput(attrs={'class': 'w-full py-4 px-6 rounded-xl border'}),
+            'description': forms.Textarea(attrs={'class': INPUT_CLASSES}),
+        }
